@@ -1,0 +1,43 @@
+#Setting up an EC2 Instance with IAM Roles and the Python Boto3 SDK
+
+Step 1:- Require up and running unstance,befire that create a role that conclude admins policies and attched that role with ec2 instance.
+
+Step 2:- Login to that ec2 instance.
+
+Step3:- Download the python package-pip
+	#yum install python
+
+Step 4:Now install boto3 
+	#pip install boto3
+
+Step4: write a script
+	
+	#!/usr/bin/python
+	import boto3
+	
+	s3 = boto3.resource('s3')
+	s3.create_bucket(Bucket='myuniquebucket')
+
+Step4: Just run the code by simply giving the execute permission.
+
+###Configuring the Boto3 SDK With API Credentials #
+#If the machine is outside of the aws cloud
+Step 1: Go to IAM 
+Step 2: Create a new user.and check Generate an access key for each user.and download the key.
+
+Step 3: Give administration access to all of the services to that.
+
+Step4:  Write code.
+
+	#!/usr/bin/python
+	#from boto3.session import Session
+	#session = Session(aws_Access_key_id='#key#',aws_secret_access_key='#secret_key')
+	#s3 = session.resource('s3')
+	#s3.create_bucket(Bucket='unique_name')
+	#
+Step 5: Give execute permission and run.
+
+
+#
+
+
